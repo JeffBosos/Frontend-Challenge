@@ -17,24 +17,7 @@ Clone this repository and create a [git bundle](https://git-scm.com/docs/git-bun
   * Acceptance Criteria:
   * The previous and the next value of a change must be tracked
 
-## State transitions
-```plantuml
-scale 10
-skinparam linetype ortho
-skinparam monochrome true
-
-[*] --> ToDo
-
-ToDo -> InProgress
-InProgress -up-> Blocked
-InProgress -> InQA
-InQA --> ToDo
-InQA -> Done
-Done -> Deployed
-Blocked --> ToDo
-
-Deployed --> [*]
-```
+![Diagram](https://plantuml.gitlab-static.net/png/U9nLZi4AmZ0GHE_x5NiM2le31QKNRmhUn4E8YorDCc6J7lht9bLflGmx-vZPJTOuuSEUqZY4QDHuTaEGF4TXQEwn0Hu1jbTuuQoJ4Drt3swQbc_eG5ILYpk7Y-AbaXAj8pTJBEpaO4Tv_e6Qk1wfojhsSIrt249L5YFHOIxnRytc-0yjg_8NlG7BYaJz)
 
 So for example:
 - If a task is currently at "toDo" state in can only be changed to "InProgress"
