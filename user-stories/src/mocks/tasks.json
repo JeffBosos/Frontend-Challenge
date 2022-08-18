@@ -2,26 +2,26 @@
 	{
 		"title": "August Norman",
 		"description": "Rivne oblast",
-		"state": "Pakistan"
+		"state": 5
 	},
 	{
 		"title": "Ima Dennis",
 		"description": "Swiętokrzyskie",
-		"state": "Sweden"
+		"state": 4
 	},
 	{
 		"title": "Miranda Vinson",
 		"description": "Vorarlberg",
-		"state": "China"
+		"state": 0
 	},
 	{
 		"title": "Camille Odom",
 		"description": "Ulster",
-		"state": "Sweden"
+		"state": 1
 	},
 	{
 		"title": "Kaye Bailey",
 		"description": "Cao Bằng",
-		"state": "Mexico"
+		"state": 2
 	}
 ]
