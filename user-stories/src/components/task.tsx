@@ -1,7 +1,7 @@
-import React from "react"
-import {Typography,Button,Card,IconButton,Box} from "@mui/material"
+import React from "react";
+import {Typography,Button,Card,IconButton,Box} from "@mui/material";
 import BorderColorIcon from '@mui/icons-material/BorderColor';
-import {TaskStatus} from '../config/constants'
+import {TaskStatus} from '../config/constants';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 interface TaskProps {
