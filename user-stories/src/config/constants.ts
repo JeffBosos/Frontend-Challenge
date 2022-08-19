@@ -1,9 +1,8 @@
-export  enum TaskStatus{
-    TODO,
-    INQA,
-    INPROGRESS,
-    BLOCKED,
-    DEPLOYED,
-    DONE
+export enum TaskStatus {
+  TODO,
+  INQA,
+  INPROGRESS,
+  BLOCKED,
+  DEPLOYED,
+  DONE,
 }
-
