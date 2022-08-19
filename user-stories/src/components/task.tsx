@@ -91,8 +91,8 @@ const Task:React.FC<TaskProps> = (props : TaskProps) => {
             }} 
         >
             <div>
-                <Typography variant="h2">Title {props.title}</Typography>
-                <Typography variant="subtitle1" sx={{ marginTop:2}}>Description {props.description}</Typography>
+                <Typography variant="h2">{props.title}</Typography>
+                <Typography variant="subtitle1" sx={{ marginTop:2}}>{props.description}</Typography>
             </div>
             <Box 
             sx={{

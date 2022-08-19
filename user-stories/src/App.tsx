@@ -3,22 +3,25 @@ import React, { useState } from "react";
 import {Button, ThemeProvider} from "@mui/material"
 import theme from "./styles/theme"
 import Tasklist from './components/tasklist'
-import Createtask from "./components/createtask";
+import TaskForm from "./components/TaskForm";
+import { Task } from "./types/task";
 
 
 const App: React.FC = () => {
-  const [isvisible, setIsvisible] = useState(false);
-  const [tasks,setTasks]=useState([
-    ...mockTasks,
-    ...mockTasks,
+  const [isvisible, setIsvisible] = useState<boolean>(false);
+  const [tasks,setTasks]=useState<Array<Task>>([
     ...mockTasks,
   ]);
+  const addTask =(newTask:Task)=>{
+    const newState:Array<Task>=[...tasks,newTask]
+    setTasks(newState)
+  }
   const onClickCreateTask=()=>{
     setIsvisible(true)
   }
   return (
     <ThemeProvider theme={theme}>
-      <Createtask visible={isvisible}/>
+      <TaskForm visible={isvisible} onAdd={addTask}/>
       <Button onClick={onClickCreateTask}>Add Task</Button>
       <Tasklist tasks={tasks}/> 
     </ThemeProvider>
