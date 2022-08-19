@@ -1,13 +1,9 @@
 import TaskCard from "./task";
 import {TaskStatus} from '../config/constants'
 import React from "react";
-import {Typography,Button,Card,IconButton,Box,Grid} from "@mui/material"
+import {Grid} from "@mui/material"
+import {Task} from "../types/task"
 
-interface Task {
-    title:string
-    state:TaskStatus
-    description:string
-}
 interface Tasklistprops{
     tasks:Array<Task>
 }

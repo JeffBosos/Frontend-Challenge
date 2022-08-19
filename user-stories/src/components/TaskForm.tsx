@@ -6,16 +6,39 @@ import React, { useState } from "react";
 import AddIcon from '@mui/icons-material/Add';
 import Input from '@mui/material/Input';
 import theme from "../styles/SecondPageTheme"
+import { Task } from "../types/task";
+import { TaskStatus } from "../config/constants";
 
 
-interface CreatetaskProps{
+interface TaskFormProps{
     visible?:boolean
+    onAdd:(newTask:Task)=>void
 }
-const Createtask = ({visible}:CreatetaskProps)=>{
-    const [value, setValue] = useState('Controlled');
-    const handleChange=(event:React.ChangeEvent<HTMLInputElement>)=>{
-        setValue(event.target.value);
+
+const TaskForm = ({visible,onAdd}:TaskFormProps)=>{
+    const [description, setDescription] = useState('');
+    const [title,setTitle]=useState('');
+    const handleChangeDescription=(event:React.ChangeEvent<HTMLInputElement>)=>{
+        setDescription(event.target.value);
     };
+    const createNewTask=():Task=>{
+        const object:Task={
+            title:title,
+            state:TaskStatus.TODO,
+            description:description
+        }
+        return object
+        
+    }
+    const handleChangeTitle=(event:React.ChangeEvent<HTMLInputElement>)=>{
+        setTitle(event.target.value);
+    };
+    const buttonManager=()=>{
+        const newTask:Task = createNewTask()
+        onAdd(newTask)
+        setTitle('')
+        setDescription('')
+    }
     if(!visible){
         return null
     }
@@ -42,7 +65,10 @@ const Createtask = ({visible}:CreatetaskProps)=>{
                         autoComplete="off"
                         >
                             <Button color="error"><CloseIcon aria-label="edit"><BorderColorIcon fontSize="medium"/></CloseIcon></Button>
-                            <Typography variant="h3"sx={{
+                            <Typography
+                                 
+                                variant="h3"
+                                sx={{
                                 color:"white", 
                                 backgroundColor:"lightblue",
                                 height:60,
@@ -50,24 +76,39 @@ const Createtask = ({visible}:CreatetaskProps)=>{
                             >
                                 Task management {'>'} Home 
                             </Typography>
-                            <Typography variant="h2">Add a new Task</Typography>
-                            <TextField placeholder="Title" variant="filled" style={{width:450}} />
+                            <Typography  variant="h2">Add a new Task</Typography>
+                            <TextField
+                                onChange={handleChangeTitle}    
+                                value={title}
+                                placeholder="Title"
+                                variant="filled" style={{width:450}} 
+                            />
                             <TextField
                                 id="outlined-multiline-flexible"
                                 label="Description"
                                 multiline
                                 minRows={10}
                                 maxRows={10}
-                                value={value}
-                                onChange={handleChange}
+                                value={description}
+                                onChange={handleChangeDescription}
                                 variant="filled"
                                 style={{width:450}}
                             />
-                            <Button sx={{backgroundColor:"lightblue",color:"white", height:60}}><AddIcon/></Button>
+                            <Button
+                                disabled={title.length==0||description.length==0}
+                                onClick={buttonManager} 
+                                sx={{
+                                    backgroundColor:"lightblue",
+                                    color:"white",
+                                    height:60
+                                }}
+                            >
+                                <AddIcon/>
+                            </Button>
                     </Box>
                 </Card>
             </ThemeProvider>
     )
 }
 
-export default Createtask
+export default TaskForm
