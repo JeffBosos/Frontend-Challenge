@@ -1,27 +1,27 @@
 [
-	{
-		"title": "August Norman",
-		"description": "Rivne oblast",
-		"state": 5
-	},
-	{
-		"title": "Ima Dennis",
-		"description": "Swiętokrzyskie",
-		"state": 4
-	},
-	{
-		"title": "Miranda Vinson",
-		"description": "Vorarlberg",
-		"state": 0
-	},
-	{
-		"title": "Camille Odom",
-		"description": "Ulster",
-		"state": 1
-	},
-	{
-		"title": "Kaye Bailey",
-		"description": "Cao Bằng",
-		"state": 2
-	}
+  {
+    "title": "August Norman",
+    "description": "Rivne oblast",
+    "state": 5
+  },
+  {
+    "title": "Ima Dennis",
+    "description": "Swiętokrzyskie",
+    "state": 4
+  },
+  {
+    "title": "Miranda Vinson",
+    "description": "Vorarlberg",
+    "state": 0
+  },
+  {
+    "title": "Camille Odom",
+    "description": "Ulster",
+    "state": 1
+  },
+  {
+    "title": "Kaye Bailey",
+    "description": "Cao Bằng",
+    "state": 2
+  }
 ]
